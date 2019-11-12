@@ -21,3 +21,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+my_fix/package-lock.json
+my_fix/public/
+my_fix/package.json
+my_fix/src/App.css
+my_fix/src/App.test.js
+my_fix/src/index.css
+my_fix/src/logo.svg
+my_fix/src/serviceWorker.js
