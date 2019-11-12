@@ -1,5 +1,5 @@
 import React from 'react';
-import '../help_tip.css'
+import '../css/help_tip.css'
 
 const HelpTip = ({tip, style}) => {
     return (

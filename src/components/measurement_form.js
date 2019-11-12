@@ -1,5 +1,5 @@
 import React from 'react';
-import "../radio.css"
+import "../css/radio.css"
 
 const Measurement = ({ measurement, handleChange }) => {
     const spacing = {
