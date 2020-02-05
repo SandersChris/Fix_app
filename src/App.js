@@ -1,8 +1,14 @@
 import React from 'react'
-import ZoneForm from './components/zone_form'
-import NavBar from './components/appbar'
-import FooterInfo from './components/footer_info'
+import { BreakpointProvider } from 'react-socks'
+import ZoneForm from './components/zoneForm/ZoneForm'
+import NavBar from './components/appbar/AppBar'
+import FooterInfo from './components/footerInfo/FooterInfo'
+import Header from './components/header/Header'
 // start on the left and let the blocks build up 
+// div issue starts at below 844
+// add mobile accessibility design
+// refactor form code using custom hooks
+// refactor large chunks of code
 
 function App() {
   const mainStyle = {
@@ -12,51 +18,23 @@ function App() {
     alignItems: "center",
     height: "100%",
     width: "100%",
+    overflowX: 'hidden',
+    overflowY: 'hidden',
     paddingBottom: 100,
-    fontFamily: "'Nunito Sans'",
-  }
-
-  const containerStyle = {
-    position: "relative",
-    height: 260,
-    background: "rgba(201, 56, 56, 1)",
-    width: "100%",
-    zIndex: -1,
-    filter: "drop-shadow(4px 4px 5px gray)"
-  }
-
-  const h1Style = {
-    position: "absolute",
-    paddingTop: 90,
-    fontSize: 68,
-    left: 37,
-    paddingRight: 10,
-    color: "black",
-    zIndex: 5,
-    fontFamily: "'Fira Sans', sans-serif"
-  }
-
-  const style = {
-    position: "absolute",
-    left: 45,
-    top: -430,
-    fontSize: 800,
-    color: "white",
-    transform: "rotate(45deg)",
-    overflow: "hidden",
-    borderRadius: 100
+    fontFamily: 'Nunito Sans',
   }
 
   return (
-    <div style={mainStyle}>
-      <NavBar />
-      <div style={containerStyle}>
-        <h1 style={h1Style}>Calorie Zones</h1>
-        <h1 style={style}>+</h1>
+      <div style={mainStyle}>
+        <NavBar />
+        <BreakpointProvider>
+          <Header />
+        </BreakpointProvider>
+        <BreakpointProvider>
+          <ZoneForm />
+        </BreakpointProvider>
+        <FooterInfo />
       </div>
-      <ZoneForm />
-      <FooterInfo />
-    </div>
     )
 }
 

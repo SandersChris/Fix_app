@@ -1,17 +1,11 @@
 import React from 'react';
-import "../css/radio.css"
+
+import './Measurement.styles.css'
 
 const Measurement = ({ measurement, handleChange }) => {
-    const spacing = {
-        paddingTop: 10
-    }
-
-    const metricSpacing = {
-        paddingLeft: 10
-    }
 
     return (
-        <div style={spacing}>
+        <div className="spacing">
             <label>
                 <input name="measurement"
                        className="form-radio" 
@@ -20,7 +14,7 @@ const Measurement = ({ measurement, handleChange }) => {
                        onChange={handleChange} 
                        type="radio" /> Imperial (US) 
             </label>
-            <label style={metricSpacing}>
+            <label className="metricSpacing" >
                 <input name="measurement"
                        className="form-radio" 
                        value="metric" 

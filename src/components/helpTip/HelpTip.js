@@ -1,9 +1,10 @@
 import React from 'react';
-import '../css/help_tip.css'
+
+import './HelpTip.styles.css'
 
 const HelpTip = ({tip, style}) => {
     return (
-        <div style={style} className="help-tip">
+        <div style={style} className="help-tip questionPosition">
             <p>{tip}</p>
         </div>
     )

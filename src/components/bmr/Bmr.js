@@ -1,13 +1,9 @@
 import React from 'react';
 
+import './Bmr.styles.css'
+
 const BmrTotal = ({ bmr, tee, style}) => {
     // being overwritten because it is inline
-
-    const bmrStyle = {}
-
-    const teeStyle = {
-        paddingTop: 8
-    }
 
     // Basal Metabolic Rate (BMR) is how much energy your body requires for basic bodily functions at rest. This includes breathing, blood circulation, and regulating body temperature, as well as many other processes.
 
@@ -18,7 +14,7 @@ const BmrTotal = ({ bmr, tee, style}) => {
             <div>
                 <h3>Your BMR: {bmr}</h3>
             </div>
-            <div style={teeStyle}>
+            <div className="tee">
                 <h3>Your TEE: {tee}</h3>
             </div>
         </div>

@@ -1,0 +1,30 @@
+.containerStyle {
+    position: relative;
+    height: 260px;
+    background: rgba(201, 56, 56, 1);
+    width: 100%;
+    z-index: -1;
+    filter: drop-shadow(4px 4px 5px gray);
+}
+
+.h1Style {
+    position: absolute;
+    padding-top: 90px;
+    font-size: 68px;
+    left: 37px;
+    padding-right: 10px;
+    color: black;
+    z-index: 5;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.xStyle {
+    position: absolute;
+    left: 45px;
+    top: -430px;
+    font-size: 800px;
+    color: white;
+    transform: rotate(45deg);
+    overflow: hidden;
+    border-radius: 100px;
+}

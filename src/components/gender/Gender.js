@@ -1,10 +1,8 @@
 import React from 'react';
-import '../css/radio.css'
+
+import './Gender.styles.css'
 
 const Gender = ({ gender, handleChange }) => {
-    const femaleSpacing= {
-        paddingLeft: 9
-    }
 
     return (
         <div>
@@ -16,7 +14,7 @@ const Gender = ({ gender, handleChange }) => {
                        onChange={handleChange} 
                        type="radio" /> Male 
             </label>
-            <label style={femaleSpacing}>
+            <label className="femaleSpacing">
                 <input name="gender"
                        className="form-radio" 
                        value='female' 
