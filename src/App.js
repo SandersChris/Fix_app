@@ -4,6 +4,7 @@ import ZoneForm from './components/zoneForm/ZoneForm'
 import NavBar from './components/appbar/AppBar'
 import FooterInfo from './components/footerInfo/FooterInfo'
 import Header from './components/header/Header'
+import Modal from './Modal'
 // start on the left and let the blocks build up 
 // div issue starts at below 844
 // add mobile accessibility design
@@ -34,6 +35,7 @@ function App() {
           <ZoneForm />
         </BreakpointProvider>
         <FooterInfo />
+        <Modal />
       </div>
     )
 }
