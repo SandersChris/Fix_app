@@ -1,5 +1,6 @@
 import React from 'react'
 import './AppBar.styles.css'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
@@ -7,7 +8,7 @@ const NavBar = () => {
     <span className="navbar-toggle" id="js-navbar-toggle">
         <i className="fas fa-bars"></i>
     </span>
-    <a href="/" className="logo">+</a>
+    <Link to='/' className="logo">+</Link>
     <ul className="main-nav" id="js-menu">
         <li>
             <a href="https://thefixgym.com/" className="nav-links">The Fix Gym</a>
@@ -16,7 +17,7 @@ const NavBar = () => {
             <p className="nav-links">My Profile</p>
         </li>
         <li>
-            <a href='/' className="nav-links">Calorie Zones</a>
+            <Link to='/caloriezones' className="nav-links">Calorie Zones</Link>
         </li>
         <li>
             <a href="https://thefixgym.com/the-fix-life-blog/" className="nav-links">The Fix Blog</a>

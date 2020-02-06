@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import Button from '@material-ui/core/Button'
-import TextField from '@material-ui/core/TextField'
 import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
@@ -13,10 +12,10 @@ export default function FormDialog() {
   const [open, setOpen] = useState(true)
   const [email, setEmail] = useState('')
 
-  console.log(!email.includes('@'))
+  const emailValidated = email.length > 6 && email.includes('@') && email.includes('.')
 
   const handleClose = () => {
-    if (email.length > 6 && email.includes('@') && email.includes('.')) {
+    if (emailValidated) {
         setOpen(false)
     } else {
         setOpen(true)
@@ -24,8 +23,8 @@ export default function FormDialog() {
   }
 
   const handleSubmit = (e) => {
-    if (email.length > 6 && email.includes('@') && email.includes('.')) {
-        console.log('great')
+    if (emailValidated) {
+        console.log(email)
     } else {
         e.preventDefault()
     }
@@ -39,11 +38,11 @@ export default function FormDialog() {
   return ReactDOM.createPortal(
     <div>
       <Dialog open={open} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+        <DialogTitle id="form-dialog-title">Food Blocks</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To use our calculator, all we ask for is your email address so we can keep you informed on
-            important nutrition tips.
+            Thanks for using our food blocks calculator! What email address would you like us to
+            send your results?
           </DialogContentText>
           <ValidatorForm
             onSubmit={handleSubmit}

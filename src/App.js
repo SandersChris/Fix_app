@@ -1,10 +1,10 @@
 import React from 'react'
-import { BreakpointProvider } from 'react-socks'
-import ZoneForm from './components/zoneForm/ZoneForm'
+import { Route, Switch } from 'react-router-dom'
+
 import NavBar from './components/appbar/AppBar'
-import FooterInfo from './components/footerInfo/FooterInfo'
-import Header from './components/header/Header'
-import Modal from './Modal'
+
+import HomePage from './pages/HomePage'
+import CalorieZones from './pages/CalorieZones'
 // start on the left and let the blocks build up 
 // div issue starts at below 844
 // add mobile accessibility design
@@ -13,31 +13,21 @@ import Modal from './Modal'
 
 function App() {
   const mainStyle = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100%",
-    width: "100%",
-    overflowX: 'hidden',
-    overflowY: 'hidden',
     paddingBottom: 100,
     fontFamily: 'Nunito Sans',
+    overflowX: 'hidden',
+    overflowY: 'hidden'
   }
 
   return (
-      <div style={mainStyle}>
-        <NavBar />
-        <BreakpointProvider>
-          <Header />
-        </BreakpointProvider>
-        <BreakpointProvider>
-          <ZoneForm />
-        </BreakpointProvider>
-        <FooterInfo />
-        <Modal />
-      </div>
-    )
+    <div style={mainStyle}>
+      <NavBar />
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route exact path='/caloriezones' component={CalorieZones} />
+      </Switch>
+    </div>
+  )
 }
 
-export default App;
+export default App

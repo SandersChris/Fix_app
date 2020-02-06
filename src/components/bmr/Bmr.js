@@ -12,10 +12,10 @@ const BmrTotal = ({ bmr, tee, style}) => {
     return(
         <div style={style}>
             <div>
-                <h3>Your BMR: {bmr}</h3>
+                <h3 className='bmr'>YOUR BMR: {bmr}</h3>
             </div>
             <div className="tee">
-                <h3>Your TEE: {tee}</h3>
+                <h3 className='tee'>YOUR TEE: {tee}</h3>
             </div>
         </div>
     )

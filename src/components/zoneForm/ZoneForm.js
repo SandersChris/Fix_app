@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Breakpoint } from 'react-socks'
+
 import BmrForm from '../bmrForm/BmrForm'
 import BmrTotal from '../bmr/Bmr'
 import Zone from '../zone/Zone'
@@ -8,6 +9,7 @@ import Metric from '../metric/Metric'
 import Measurement from '../measurement/Measurement'
 import Explainer from '../explainer/Explainer'
 import Gender from '../gender/Gender'
+import Modal from '../../Modal'
 
 import './ZoneForm.styles.css'
 // state may be updating everytime a letter is typed, updating too often see if this should be changed
@@ -122,7 +124,7 @@ const ZoneForm = () => {
                   renderMeasurement={renderMeasurement}
                   value={TEE}
                   handleTEE={handleTEE}
-                  /> 
+                /> 
               </div>
             </div>
         </Breakpoint>
@@ -159,7 +161,7 @@ const ZoneForm = () => {
           <div className="mdRenderedTopDiv">
             <div>
               <div className="mdBmrTotal">
-                <BmrTotal bmr={Math.round(bmr / TEE)} tee={bmr}/>
+                <BmrTotal bmr={Math.round(bmr / TEE)} tee={bmr} />
               </div>
               <div className="mdZones">
                 <Zone bmr={bmr} />
@@ -176,6 +178,7 @@ const ZoneForm = () => {
             </div>
           </div>
         </Breakpoint>
+        <Modal />
       </div> 
 
     return (

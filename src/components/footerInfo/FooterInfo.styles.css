@@ -11,7 +11,7 @@
     grid-template-rows: 1fr 1fr;
     column-gap: 30px;
     row-gap: 40px;
-    height: 500px;
+    height: 400px;
 }
 
 .div1Style {
@@ -62,8 +62,8 @@
 
 .warningStyle {
     max-width: 45vw;
-    padding-top: 20px;
-    padding-left: 8px;
+    padding-top: 15px;
+    padding-left: 20px;
     padding-right: 8px;
 }
 
