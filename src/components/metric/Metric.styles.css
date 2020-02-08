@@ -1,12 +1,11 @@
-.spacing {
-    padding-top: 2px;
+#spacingWeight {
+    height: 90px;
 }
 
-.spacingHeight {
-    height: 100px;
-    bottom: 50px;
+#spacingHeight {
+    height: 90px;
 }
 
-.spacingAge {
+#spacingAge {
     bottom: 56px;
 }

@@ -17,10 +17,10 @@ const Imperial = (props) => {
 
     return (
         <div>
-            <div className="spacingWeight"> <TextField id="outlined-helperText" label="Weight" helperText="lbs" value={props.pounds} onChange={props.handlePounds} inputProps={inputProps} margin="normal" variant="outlined"/></div>
-            <div className="spacingHeight"> <TextField id="outlined-helperText" label="Height" helperText="feet" value={props.feet} onChange={props.handleFeet} inputProps={inputProps} margin="normal" variant="outlined"/>
-                          <span className="spacingInches"><TextField id="outlined-helperText" helperText="inches" value={props.inches} onChange={props.handleInches} inputProps={inputPropsInches} margin="normal" variant="outlined"/></span></div>
-            <div><TextField id="outlined-helperText" label="Age" helperText="years" value={props.age} onChange={props.handleAge} inputProps={inputProps} margin="normal" variant="outlined"/></div>
+            <div id="spacingWeight"> <TextField id="outlined-helperText" label="Weight" helperText="lbs" value={props.pounds} onChange={props.handlePounds} inputProps={inputProps} margin="normal" variant="outlined"/></div>
+            <div id="spacingHeight"> <TextField id="outlined-helperText" label="Height" helperText="feet" value={props.feet} onChange={props.handleFeet} inputProps={inputProps} margin="normal" variant="outlined"/>
+                          <span id="spacingInches"><TextField id="outlined-helperText" helperText="inches" value={props.inches} onChange={props.handleInches} inputProps={inputPropsInches} margin="normal" variant="outlined"/></span></div>
+            <div id="spacingAge"><TextField id="outlined-helperText" label="Age" helperText="years" value={props.age} onChange={props.handleAge} inputProps={inputProps} margin="normal" variant="outlined"/></div>
         </div>
     )
 }

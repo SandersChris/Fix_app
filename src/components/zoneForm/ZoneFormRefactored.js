@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Breakpoint } from 'react-socks'
 
 import BmrForm from '../bmrForm/BmrForm'
 import BmrTotal from '../bmr/Bmr'
@@ -7,15 +6,14 @@ import Zone from '../zone/Zone'
 import Imperial from '../imperial/Imperial'
 import Metric from '../metric/Metric'
 import Measurement from '../measurement/Measurement'
-import Explainer from '../explainer/Explainer'
 import Gender from '../gender/Gender'
 import Modal from '../../Modal'
 
-import './ZoneForm.styles.css'
+import './zone-form-refactored.styles.css'
 // state may be updating everytime a letter is typed, updating too often see if this should be changed
 // update div header to be across entire screen
 
-const ZoneForm = () => {
+const ZoneFormRefactored = () => {
     // total bmr
     const [bmr, setBmr] = useState(0)
     // measurement type
@@ -90,16 +88,14 @@ const ZoneForm = () => {
     // ternery for bmr and zone rendering 
     const renderBmrZone = bmr === 0 || isNaN(bmr / TEE)
     ? // unrendered template first
-      <div style={{ paddingLeft: 25 }}>
-        {/* large view size */}
-        <Breakpoint customQuery='(min-width: 1025px)'>
-          <div className="lgTopDiv" >
-          <Explainer className="lgExplainer" />
-          <div className="lgUnrenderedFormStyle" >
+      <div style={{ paddingLeft: 0 }}>
+          <div className="top-div" >
+          <div className="unrendered-form" >
+            <h1 className="zone-header">Calorie Zones</h1>
             <Gender handleChange={handleGender} gender={gender} />
             <Measurement measurement={measurement} handleChange={handleMeasurement} />
             <BmrForm 
-              className="bmrForm"
+              className="bmr-form"
               calculate={measurement === "imperial" ? handleImperialBmr : handleMetricBmr}
               renderMeasurement={renderMeasurement}
               value={TEE}
@@ -107,46 +103,23 @@ const ZoneForm = () => {
               />
           </div>
           </div>
-        </Breakpoint>
-        
-        {/* medium view size */}
-        <Breakpoint customQuery='(max-width: 1024px)'>
-            <div className="mdTopDiv">
-              <div>
-                <Explainer className="mdExplainer" />
-              </div>
-              <div className="mdUnrenderedForm">
-                <Gender handleChange={handleGender} gender={gender} />
-                <Measurement measurement={measurement} handleChange={handleMeasurement} />
-                <BmrForm 
-                  className="bmrForm"
-                  calculate={measurement === "imperial" ? handleImperialBmr : handleMetricBmr}
-                  renderMeasurement={renderMeasurement}
-                  value={TEE}
-                  handleTEE={handleTEE}
-                /> 
-              </div>
-            </div>
-        </Breakpoint>
       </div>
 
     : // rendered template
       <div>
-      {/* large view size */}
-        <Breakpoint customQuery='(min-width: 1323px)' >
-          <div className="lgRenderedTopDiv">
+          <div className="rendered-top-div">
             <div className="form-bmr">
-              <div className="lgRenderedForm">
+              <div className="rendered-form">
                 <Gender handleChange={handleGender} gender={gender} />
                 <Measurement measurement={measurement} handleChange={handleMeasurement} />
                 <BmrForm 
-                  className="bmrRendered"
+                  className="bmr-rendered"
                   calculate={measurement === "imperial" ? handleImperialBmr : handleMetricBmr}
                   renderMeasurement={renderMeasurement}
                   value={TEE}
                   handleTEE={handleTEE}/> 
               </div>
-              <div className="bmrResults">
+              <div className="bmr-results">
                 <BmrTotal bmr={Math.round(bmr / TEE)} tee={bmr}/>
               </div>
             </div>
@@ -154,30 +127,6 @@ const ZoneForm = () => {
               <Zone bmr={bmr} />
             </div>
           </div>
-        </Breakpoint>
-
-        {/* medium view size */} 
-        <Breakpoint customQuery='(max-width: 1322px)'>
-          <div className="mdRenderedTopDiv">
-            <div>
-              <div className="mdBmrTotal">
-                <BmrTotal bmr={Math.round(bmr / TEE)} tee={bmr} />
-              </div>
-              <div className="mdZones">
-                <Zone bmr={bmr} />
-              </div>
-              <div className="mdRenderedForm">
-              <Gender handleChange={handleGender} gender={gender} />
-              <Measurement measurement={measurement} handleChange={handleMeasurement} />
-              <BmrForm className="mdRenderedBmrForm"
-                       calculate={measurement === "imperial" ? handleImperialBmr : handleMetricBmr}
-                       renderMeasurement={renderMeasurement}
-                       value={TEE}
-                       handleTEE={handleTEE}/> 
-              </div>
-            </div>
-          </div>
-        </Breakpoint>
         <Modal />
       </div> 
 
@@ -186,4 +135,4 @@ const ZoneForm = () => {
     )
 }
 
-export default ZoneForm
+export default ZoneFormRefactored

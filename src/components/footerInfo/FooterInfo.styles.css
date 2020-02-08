@@ -80,3 +80,31 @@
 .liStyle {
     padding-top: 3
 }
+
+@media only screen and (max-width: 1323px) {
+    .topChildDivStyle {
+        row-gap: 10px;
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width: 1099px) {
+    .topChildDivStyle {
+        row-gap: 10px;
+        height: 550px;
+    }
+}
+
+@media only screen and (max-width: 926px) {
+    .topChildDivStyle {
+        row-gap: 10px;
+        height: 600px;
+    }
+}
+
+@media only screen and (max-width: 868px) {
+    .topChildDivStyle {
+        row-gap: 10px;
+        height: 700px;
+    }
+}

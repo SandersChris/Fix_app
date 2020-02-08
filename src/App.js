@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import NavBar from './components/appbar/AppBar'
+import AppBar from './components/appbar/AppBar'
 
 import HomePage from './pages/HomePage'
 import CalorieZones from './pages/CalorieZones'
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div style={mainStyle}>
-      <NavBar />
+      <AppBar />
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/caloriezones' component={CalorieZones} />

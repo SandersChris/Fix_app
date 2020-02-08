@@ -1,8 +1,6 @@
 import React from 'react'
-import { BreakpointProvider } from 'react-socks'
-import ZoneForm from '../components/zoneForm/ZoneForm'
 import FooterInfo from '../components/footerInfo/FooterInfo'
-import Header from '../components/header/Header'
+import ZoneFormRefactored from '../components/zoneForm/ZoneFormRefactored'
 // start on the left and let the blocks build up 
 // div issue starts at below 844
 // add mobile accessibility design
@@ -22,12 +20,7 @@ const CalorieZones = () => {
 
   return (
       <div style={mainStyle}>
-        <BreakpointProvider>
-            <Header title='Calorie Zones' />
-        </BreakpointProvider>
-        <BreakpointProvider>
-          <ZoneForm />
-        </BreakpointProvider>
+          <ZoneFormRefactored />
         <FooterInfo />
       </div>
     )

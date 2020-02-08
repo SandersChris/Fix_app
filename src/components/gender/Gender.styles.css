@@ -5,7 +5,7 @@
      appearance: none;
      display: inline-block;
      position: relative;
-     background-color: white;
+     background-color: #e5dfdf;
      color: white;
      top: 1px;
      height: 15px;
@@ -13,25 +13,25 @@
      border: 0;
      border-radius: 200px;
      cursor: pointer;     
-     margin-right: 5px;
+     margin-right: 3px;
      outline: none;
 }
 .form-radio:checked::before
 {
      position: absolute;
      font: 9px/1 'Open Sans', sans-serif;
-     left: 5px;
+     left: 4.5px;
      top: 3px;
      content: '\02143';
      transform: rotate(40deg);
 }
 .form-radio:hover
 {
-     background-color: #d7d1c9;
+     background-color: #ef7b7b;
 }
 .form-radio:checked
 {
-     background-color: #ef7b7b;
+     background-color: #c70d3a;
 }
 
 .femaleSpacing {

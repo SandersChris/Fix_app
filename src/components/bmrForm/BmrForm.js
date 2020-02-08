@@ -18,7 +18,7 @@ const StyledSelect = withStyles({
 
 const StyledButton = withStyles({
   root: {
-    background: '#c93838',
+    background: '#c70d3a',
     color: 'white',
   }
 })(Button);
@@ -54,7 +54,7 @@ const BmrForm = (props) => {
     return(
             <div className="mainBody">
             <form onSubmit={props.calculate}>
-                <div>{props.renderMeasurement}</div>
+                <div className="test">{props.renderMeasurement}</div>
                 <div className="selectPosition">
                   <HelpTip tip={'This select menu translates your physical activity level (PAL) into a number. If you plan on The Fix being your only source of exercise, we reccommend selecting "Moderately Active".'} />
                   <FormControl variant='outlined' className={classes.root}>
@@ -70,9 +70,9 @@ const BmrForm = (props) => {
                   </FormControl>
                 </div>
                 <div className="buttonPosition">
-                <StyledButton type="submit" variant="contained" color="default">
-                Calculate!
-              </StyledButton>
+                  <StyledButton type="submit" variant="contained" color="default">
+                  Calculate
+                  </StyledButton>
                 </div>
             </form>
             </div>

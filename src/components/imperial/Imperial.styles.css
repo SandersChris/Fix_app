@@ -1,11 +1,17 @@
-.spacingWeight {
+#spacingWeight {
     height: 90px;
 }
 
-.spacingHeight {
+#spacingHeight {
     height: 90px;
 }
 
-.spacingInches {
+#spacingInches {
     padding-left: 5px;
+}
+
+#spacingAge {
+    padding-top: 10px;
+    margin-bottom: 15px;
+    height: 90px;
 }

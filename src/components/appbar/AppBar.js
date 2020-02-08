@@ -14,13 +14,13 @@ const NavBar = () => {
             <a href="https://thefixgym.com/" className="nav-links">The Fix Gym</a>
         </li>
         <li>
-            <p className="nav-links">My Profile</p>
+            <p className="nav-links">Profile</p>
         </li>
         <li>
-            <Link to='/caloriezones' className="nav-links">Calorie Zones</Link>
+            <Link to='/caloriezones' className="nav-links">Zones</Link>
         </li>
         <li>
-            <a href="https://thefixgym.com/the-fix-life-blog/" className="nav-links">The Fix Blog</a>
+            <a href="https://thefixgym.com/the-fix-life-blog/" className="nav-links">Blog</a>
         </li>
     </ul>
     </nav>
