@@ -1,6 +1,7 @@
 import React from 'react'
-import FooterInfo from '../components/footerInfo/FooterInfo'
+
 import ZoneFormRefactored from '../components/zoneForm/ZoneFormRefactored'
+import ZoneInfo from '../components/zone-info/ZoneInfo'
 // start on the left and let the blocks build up 
 // div issue starts at below 844
 // add mobile accessibility design
@@ -9,20 +10,19 @@ import ZoneFormRefactored from '../components/zoneForm/ZoneFormRefactored'
 
 const CalorieZones = () => {
 
-    const mainStyle = {
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100%",
-        width: "100%"
-      }
+  const formPosition = {
+    display: 'flex',
+    justifyContent: 'center'
+  }
 
   return (
-      <div style={mainStyle}>
+      <div>
+        <div style={formPosition}>
           <ZoneFormRefactored />
-        <FooterInfo />
+        </div>
+        <ZoneInfo />
       </div>
+
     )
 }
 

@@ -88,7 +88,7 @@ const ZoneFormRefactored = () => {
     // ternery for bmr and zone rendering 
     const renderBmrZone = bmr === 0 || isNaN(bmr / TEE)
     ? // unrendered template first
-      <div style={{ paddingLeft: 0 }}>
+      <div className='form-position'>
           <div className="top-div" >
           <div className="unrendered-form" >
             <h1 className="zone-header">Calorie Zones</h1>
