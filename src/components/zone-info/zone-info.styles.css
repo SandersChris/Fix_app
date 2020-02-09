@@ -1,12 +1,15 @@
+.main-container {
+    width: 100%;
+    height: 1900px;
+    background-color: #f9f9f9;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
 .zone-info-container {
     display: flex;
     justify-content: center;
     margin-top: 80px;
-    background-color: #f9f9f9;
-    width: 100%;
-    height: 800px;
-    padding-left: 70px;
-    padding-right: 70px;
 }
 
 .zone-header-container {
@@ -31,4 +34,50 @@
 .zone-info-explainer {
     font-size: 21px;
     color: #272121
+}
+
+.red-zone-container {
+    margin-top: 150px;
+    margin-left: 75px;
+    width: 375px;
+    height: 175px;
+    background-color: #f0134d;
+    border: #f0134d 5px solid;
+    border-radius: 6px;
+    filter: drop-shadow(0px 0px 6px gray);
+}
+
+.yellow-zone-container {
+    margin-top: 175px;
+    margin-right: 75px;
+    float: right;
+    width: 375px;
+    height: 175px;
+    border: #f4ff61 5px solid;
+    border-radius: 6px;
+    background-color: #f4ff61;
+    filter: drop-shadow(0px 0px 6px #dedede);
+}
+
+.green-zone-container {
+    margin-top: 500px;
+    margin-left: 75px;
+    width: 375px;
+    height: 175px;
+    border: #15cda8 5px solid;
+    border-radius: 6px;
+    background-color: #15cda8;
+    filter: drop-shadow(0px 0px 6px gray);
+}
+
+.double-red-zone-container {
+    margin-top: 175px;
+    margin-right: 75px;
+    width: 375px;
+    height: 175px;
+    float: right;
+    border: #df0054 5px solid;
+    border-radius: 6px;
+    background-color: #df0054;
+    filter: drop-shadow(0px 0px 6px gray);
 }
