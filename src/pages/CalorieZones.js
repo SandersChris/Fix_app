@@ -2,6 +2,7 @@ import React from 'react'
 
 import ZoneFormRefactored from '../components/zoneForm/ZoneFormRefactored'
 import ZoneInfo from '../components/zone-info/ZoneInfo'
+import EmailContact from '../components/email-contact/EmailContact'
 // start on the left and let the blocks build up 
 // div issue starts at below 844
 // add mobile accessibility design
@@ -20,9 +21,11 @@ const CalorieZones = () => {
         <div style={formPosition}>
           <ZoneFormRefactored />
         </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
         <ZoneInfo />
+        <EmailContact />
+        </div>
       </div>
-
     )
 }
 

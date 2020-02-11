@@ -1,15 +1,16 @@
 .main-container {
-    width: 100%;
-    height: 1900px;
-    background-color: #f9f9f9;
+    width: 90%;
+    height: 1850px;
+    background-color: #f8f8f8;
     padding-left: 70px;
     padding-right: 70px;
+    margin-top: 60px;
 }
 
 .zone-info-container {
     display: flex;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
 .zone-header-container {
@@ -36,10 +37,15 @@
     color: #272121
 }
 
-.red-zone-container {
+.red-and-green-zone-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     margin-top: 150px;
-    margin-left: 75px;
-    width: 375px;
+}
+
+.red-zone {
+    width: 350px;
     height: 175px;
     background-color: #f0134d;
     border: #f0134d 5px solid;
@@ -47,37 +53,99 @@
     filter: drop-shadow(0px 0px 6px gray);
 }
 
-.yellow-zone-container {
-    margin-top: 175px;
-    margin-right: 75px;
-    float: right;
-    width: 375px;
-    height: 175px;
-    border: #f4ff61 5px solid;
-    border-radius: 6px;
-    background-color: #f4ff61;
-    filter: drop-shadow(0px 0px 6px #dedede);
+/* can be refactored */
+.red-and-green-zone-text-container {
+    margin-left: 200px;
+    width: 350px;
 }
 
-.green-zone-container {
-    margin-top: 500px;
-    margin-left: 75px;
-    width: 375px;
+.zone-text {
+    padding-top: 12px;
+    font-size: 20px;
+    color: #272121
+}
+
+.red-zone-header {
+    font-family: 'Cambay', sans-serif;
+    font-size: 31px;
+    margin-top: -10px;
+    color: #3c4245;
+    border-bottom: #f0134d 2px  solid;
+    width: 140px;
+}
+
+/* Yellow Zone */
+
+.yellow-and-double-red-zone-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 150px;
+}
+
+.yellow-and-double-red-zone-text-container {
+    margin-right: 200px;
+    width: 350px;
+}
+
+.yellow-zone {
+    width: 350px;
     height: 175px;
+    background-color: #ffdc34;
+    color: #3c4245;
+    border: #ffdc34 5px solid;
+    border-radius: 6px;
+    filter: drop-shadow(0px 0px 6px gray);
+}
+
+.yellow-zone-header {
+    font-family: 'Cambay', sans-serif;
+    font-size: 31px;
+    color: #3c4245;
+    margin-top: -10px;
+    border-bottom: #ffdc34 2px  solid;
+    width: 185px;
+}
+
+/* #15cda8 */
+
+.green-zone {
+    width: 350px;
+    height: 175px;
+    background-color: #15cda8;
     border: #15cda8 5px solid;
     border-radius: 6px;
-    background-color: #15cda8;
     filter: drop-shadow(0px 0px 6px gray);
 }
 
-.double-red-zone-container {
-    margin-top: 175px;
-    margin-right: 75px;
-    width: 375px;
+.green-zone-header {
+    font-family: 'Cambay', sans-serif;
+    font-size: 31px;
+    margin-top: -10px;
+    color: #3c4245;
+    border-bottom: #15cda8 2px  solid;
+    width: 180px;
+}
+
+.double-red-zone-header {
+    font-family: 'Cambay', sans-serif;
+    font-size: 31px;
+    margin-top: -10px;
+    color: #3c4245;
+    border-bottom: #940a37 2px  solid;
+    width: 255px;
+}
+
+.double-red-zone {
+    width: 350px;
     height: 175px;
-    float: right;
-    border: #df0054 5px solid;
+    background-color: #940a37;
+    border: #940a37 5px solid;
     border-radius: 6px;
-    background-color: #df0054;
     filter: drop-shadow(0px 0px 6px gray);
+}
+
+a {
+    text-decoration: none;
+    color: #c70d3a;
 }
