@@ -7,7 +7,7 @@ import './zone-info.styles.css'
 const ZoneInfo = () => {
     return (
         <div className='main-container'>
-            <div className='zone-info-container'>
+            <div className='zone-info-container slideanim'>
                 <div className='zone-header-container'>
                     <h4 className='zone-info-title'>ZONE PHILOSOPHY</h4>
                     <p className='zone-info-tag'>
@@ -25,7 +25,7 @@ const ZoneInfo = () => {
             </div>
             <div className='main-zone-container'>
                 <ZoneInfoIndividual 
-                    sectionClassName='red-and-green-zone-container' 
+                    sectionClassName='red-and-green-zone-container slideanim' 
                     headerClassName='red-zone-header'
                     textContainer='red-and-green-zone-text-container'
                     header='Red Zone'
@@ -36,7 +36,7 @@ const ZoneInfo = () => {
                     textClassName='zone-text'
                 />
                 <ZoneInfoIndividual 
-                    sectionClassName='yellow-and-double-red-zone-container'
+                    sectionClassName='yellow-and-double-red-zone-container slideanim'
                     textContainer='yellow-and-double-red-zone-text-container'
                     headerClassName='yellow-zone-header' 
                     header='Yellow Zone'
@@ -47,18 +47,18 @@ const ZoneInfo = () => {
                     textClassName='zone-text'   
                 />
                 <ZoneInfoIndividual 
-                    sectionClassName='red-and-green-zone-container'
+                    sectionClassName='red-and-green-zone-container slideanim'
                     textContainer='red-and-green-zone-text-container'
                     headerClassName='green-zone-header' 
                     header='Green Zone'
                     text='Represents any caloric intake between below 15% and 30% of Total
                           Energy Expenditure. In this zone you will lose fat and
-                          gain lean muscle. The ideal zone for most.'
+                          gain lean muscle. The ideal zone for weight loss.'
                     zoneClassName='green-zone'
                     textClassName='zone-text'   
                 />
                 <ZoneInfoIndividual 
-                    sectionClassName='yellow-and-double-red-zone-container'
+                    sectionClassName='yellow-and-double-red-zone-container slideanim'
                     textContainer='yellow-and-double-red-zone-text-container'
                     headerClassName='double-red-zone-header' 
                     header='Double Red Zone'

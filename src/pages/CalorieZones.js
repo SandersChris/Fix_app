@@ -23,8 +23,9 @@ const CalorieZones = () => {
         </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
         <ZoneInfo />
-        <EmailContact />
         </div>
+        <EmailContact />
+        <div style={{ backgroundColor: '#222831', height: 600 }}></div>
       </div>
     )
 }
