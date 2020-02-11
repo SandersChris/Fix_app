@@ -1,23 +1,28 @@
 import React from 'react'
 
-const ZoneInfoIndividual = ({ 
+const ZoneInfoIndividual = ({
     headerClassName, 
     sectionClassName, 
     header,
     text,
     zoneClassName,
     textContainer,
-    textClassName }) => {
+    textClassName }, ref) => {
     return (
+        <div ref={ref}>
         <section style={{ display: 'flex', justifyContent: 'center' }} 
-                 className={sectionClassName} >
+                 className={sectionClassName} 
+                 >
             <div className={zoneClassName}></div>
             <div className={textContainer}>
                 <p className={headerClassName}>{header}</p>
                 <p className={textClassName}>{text}</p>
             </div>
         </section>
+        </div>
     )
 }
 
-export default ZoneInfoIndividual
+const forwardedZoneInfoIndividual = React.forwardRef(ZoneInfoIndividual)
+
+export default forwardedZoneInfoIndividual

@@ -1,13 +1,92 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { useIntersection } from 'react-use'
+import gsap from 'gsap'
 
 import ZoneInfoIndividual from '../zone-info-individual/ZoneInfoIndividual'
 
 import './zone-info.styles.css'
+// look for refactors
 
 const ZoneInfo = () => {
+    const sectionRef = useRef(null)
+    const sectionRefRed = useRef(null)
+    const sectionRefGreen = useRef(null)
+    const sectionRefYellow = useRef(null)
+    const sectionRefDoubleRed = useRef(null)
+
+    // must be unique
+    const intersection = useIntersection(sectionRef, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    })
+
+    const intersectionRed = useIntersection(sectionRefRed, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.4
+    })
+
+    const intersectionYellow = useIntersection(sectionRefYellow, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.6
+    })
+
+    const intersectionGreen = useIntersection(sectionRefGreen, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.6
+    })
+
+    const intersectionDoubleRed = useIntersection(sectionRefDoubleRed, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.6
+    })
+
+    const fadeIn = element => {
+        gsap.to(element, 1, {
+            opacity: 1,
+            y: -60,
+            ease: 'power4.out',
+            stagger: {
+                amount: 0.2
+            }
+        })
+    }
+
+    const fadeOut = element => {
+        gsap.to(element, 1, {
+            opacity: 0,
+            y: -20,
+            ease: 'power4.out'
+        })
+    }
+
+    intersection && intersection.intersectionRatio < 0.1
+        ? fadeOut('.fadeIn')
+        : fadeIn('.fadeIn')
+
+    intersectionRed && intersectionRed.intersectionRatio < 0.4
+        ? fadeOut('.fadeInRed')
+        : fadeIn('.fadeInRed')
+
+    intersectionYellow && intersectionYellow.intersectionRatio < 0.6
+        ? fadeOut('.fadeInYellow')
+        : fadeIn('.fadeInYellow')
+
+    intersectionGreen && intersectionGreen.intersectionRatio < 0.6
+        ? fadeOut('.fadeInGreen')
+        : fadeIn('.fadeInGreen')
+
+    intersectionDoubleRed && intersectionDoubleRed.intersectionRatio < 0.6
+        ? fadeOut('.fadeInDoubleRed')
+        : fadeIn('.fadeInDoubleRed')
+
     return (
-        <div className='main-container'>
-            <div className='zone-info-container slideanim'>
+        <div ref={sectionRef} className='main-container'>
+            <div className='zone-info-container fadeIn'>
                 <div className='zone-header-container'>
                     <h4 className='zone-info-title'>ZONE PHILOSOPHY</h4>
                     <p className='zone-info-tag'>
@@ -25,7 +104,8 @@ const ZoneInfo = () => {
             </div>
             <div className='main-zone-container'>
                 <ZoneInfoIndividual 
-                    sectionClassName='red-and-green-zone-container slideanim' 
+                    ref={sectionRefRed}
+                    sectionClassName='red-and-green-zone-container fadeInRed' 
                     headerClassName='red-zone-header'
                     textContainer='red-and-green-zone-text-container'
                     header='Red Zone'
@@ -36,7 +116,8 @@ const ZoneInfo = () => {
                     textClassName='zone-text'
                 />
                 <ZoneInfoIndividual 
-                    sectionClassName='yellow-and-double-red-zone-container slideanim'
+                    ref={sectionRefYellow}
+                    sectionClassName='yellow-and-double-red-zone-container fadeInYellow'
                     textContainer='yellow-and-double-red-zone-text-container'
                     headerClassName='yellow-zone-header' 
                     header='Yellow Zone'
@@ -46,8 +127,9 @@ const ZoneInfo = () => {
                     zoneClassName='yellow-zone'
                     textClassName='zone-text'   
                 />
-                <ZoneInfoIndividual 
-                    sectionClassName='red-and-green-zone-container slideanim'
+                <ZoneInfoIndividual
+                    ref={sectionRefGreen}
+                    sectionClassName='red-and-green-zone-container fadeInGreen'
                     textContainer='red-and-green-zone-text-container'
                     headerClassName='green-zone-header' 
                     header='Green Zone'
@@ -58,7 +140,8 @@ const ZoneInfo = () => {
                     textClassName='zone-text'   
                 />
                 <ZoneInfoIndividual 
-                    sectionClassName='yellow-and-double-red-zone-container slideanim'
+                    ref={sectionRefDoubleRed}
+                    sectionClassName='yellow-and-double-red-zone-container fadeInDoubleRed'
                     textContainer='yellow-and-double-red-zone-text-container'
                     headerClassName='double-red-zone-header' 
                     header='Double Red Zone'
