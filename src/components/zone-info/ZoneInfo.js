@@ -6,6 +6,7 @@ import ZoneInfoIndividual from '../zone-info-individual/ZoneInfoIndividual'
 
 import './zone-info.styles.css'
 // look for refactors
+// transition in quicker with the calorie zones
 
 const ZoneInfo = () => {
     const sectionRef = useRef(null)
@@ -24,25 +25,25 @@ const ZoneInfo = () => {
     const intersectionRed = useIntersection(sectionRefRed, {
         root: null,
         rootMargin: '0px',
-        threshold: 0.4
+        threshold: 0.3
     })
 
     const intersectionYellow = useIntersection(sectionRefYellow, {
         root: null,
         rootMargin: '0px',
-        threshold: 0.6
+        threshold: 0.5
     })
 
     const intersectionGreen = useIntersection(sectionRefGreen, {
         root: null,
         rootMargin: '0px',
-        threshold: 0.6
+        threshold: 0.5
     })
 
     const intersectionDoubleRed = useIntersection(sectionRefDoubleRed, {
         root: null,
         rootMargin: '0px',
-        threshold: 0.6
+        threshold: 0.5
     })
 
     const fadeIn = element => {
@@ -68,19 +69,19 @@ const ZoneInfo = () => {
         ? fadeOut('.fadeIn')
         : fadeIn('.fadeIn')
 
-    intersectionRed && intersectionRed.intersectionRatio < 0.4
+    intersectionRed && intersectionRed.intersectionRatio < 0.3
         ? fadeOut('.fadeInRed')
         : fadeIn('.fadeInRed')
 
-    intersectionYellow && intersectionYellow.intersectionRatio < 0.6
+    intersectionYellow && intersectionYellow.intersectionRatio < 0.5
         ? fadeOut('.fadeInYellow')
         : fadeIn('.fadeInYellow')
 
-    intersectionGreen && intersectionGreen.intersectionRatio < 0.6
+    intersectionGreen && intersectionGreen.intersectionRatio < 0.5
         ? fadeOut('.fadeInGreen')
         : fadeIn('.fadeInGreen')
 
-    intersectionDoubleRed && intersectionDoubleRed.intersectionRatio < 0.6
+    intersectionDoubleRed && intersectionDoubleRed.intersectionRatio < 0.5
         ? fadeOut('.fadeInDoubleRed')
         : fadeIn('.fadeInDoubleRed')
 

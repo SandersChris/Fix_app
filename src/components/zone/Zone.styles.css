@@ -4,7 +4,7 @@
     height: 800px;
     left: 55%;
     width: 100%;
-    padding-bottom: 30px;
+    margin-bottom: 75px;
 }
 
 .info {
@@ -16,39 +16,45 @@
 }
 
 .red {
-    background-color: #c72c41;
-    width: 500px;
-    height: 100%;
-    opacity: 0.93;
-    filter: drop-shadow(0px 0px 20px #9e9e9e);
-    border-radius: 5px;
+    width: 375px;
+    height: 175px;
+    background-color: #f0134d;
+    border: #f0134d 5px solid;
+    border-radius: 6px;
+    filter: drop-shadow(0px 0px 6px gray);
+    padding-bottom: 10px;
 }
 
 .yellow {
-    background-color: #f9ce00;
-    width: 500px;
-    height: 100%;
-    opacity: 0.93;
-    filter: drop-shadow(0px 0px 20px #9e9e9e);
-    border-radius: 5px;
+    width: 375px;
+    height: 175px;
+    margin-left: 100px;
+    background-color: #ffdc34;
+    border: #ffdc34 5px solid;
+    border-radius: 6px;
+    filter: drop-shadow(0px 0px 6px gray);
+    margin-top: 30px;
 }
 
 .green {
-    background-color: #009975;
-    width: 500px;
-    height: 100%;
-    opacity: 0.93;
-    filter: drop-shadow(0px 0px 20px #9e9e9e);
-    border-radius: 5px;
+    width: 375px;
+    height: 175px;
+    background-color: #15cda8;
+    border: #15cda8 5px solid;
+    border-radius: 6px;
+    filter: drop-shadow(0px 0px 6px gray);
+    margin-top: 30px;
 }
 
 .doubleRed {
-    background-color: #801336;
-    width: 500px;
-    height: 100%;
-    opacity: 0.93;
-    filter: drop-shadow(0px 0px 20px #9e9e9e);
-    border-radius: 5px;
+    width: 375px;
+    height: 175px;
+    margin-left: 100px;
+    background-color: #940a37;
+    border: #940a37 5px solid;
+    border-radius: 6px;
+    filter: drop-shadow(0px 0px 6px gray);
+    margin-top: 30px;
 }
 
 /* zone numbers */

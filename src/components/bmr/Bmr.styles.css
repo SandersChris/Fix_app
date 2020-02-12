@@ -1,8 +1,31 @@
-.tee {
-    padding-top: 8;
-    font-weight: bold;
+.bmr-top-div {
+    text-align: center;
+    padding-top: 35px;
+    
+}
+
+.sit {
+    position: absolute;
+    top: 34px;
+    left: 65px;
+}
+
+.tee-container {
+    padding-top: 50px;
+    padding-right: 5px;
+}
+
+.run {
+    position: absolute;
+    left: 65px;
+    top: 105px;
 }
 
 .bmr {
-    font-weight: bold;
+    padding-right: 35px;
+}
+
+.recalculate-button {
+    padding-top: 40px;
+    padding-right: 35px;
 }

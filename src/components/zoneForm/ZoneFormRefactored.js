@@ -87,48 +87,50 @@ const ZoneFormRefactored = () => {
 
     // ternery for bmr and zone rendering 
     const renderBmrZone = bmr === 0 || isNaN(bmr / TEE)
-    ? // unrendered template first
-      <div className='form-position'>
-          <div className="top-div" >
-          <div className="unrendered-form" >
-            <h1 className="zone-header">Calorie Zones</h1>
-            <Gender handleChange={handleGender} gender={gender} />
-            <Measurement measurement={measurement} handleChange={handleMeasurement} />
-            <BmrForm 
-              className="bmr-form"
-              calculate={measurement === "imperial" ? handleImperialBmr : handleMetricBmr}
-              renderMeasurement={renderMeasurement}
-              value={TEE}
-              handleTEE={handleTEE}
-              />
-          </div>
-          </div>
-      </div>
+      ? // unrendered template first
+        <div className='form-position'>
+            <div className="top-div" >
+            <div className="unrendered-form" >
+              <h1 className="zone-header">Calorie Zones</h1>
+              <Gender handleChange={handleGender} gender={gender} />
+              <Measurement measurement={measurement} handleChange={handleMeasurement} />
+              <BmrForm 
+                className="bmr-form"
+                calculate={measurement === "imperial" ? handleImperialBmr : handleMetricBmr}
+                renderMeasurement={renderMeasurement}
+                value={TEE}
+                handleTEE={handleTEE}
+                />
+            </div>
+            </div>
+        </div>
 
-    : // rendered template
-      <div>
-          <div className="rendered-top-div">
-            <div className="form-bmr">
-              <div className="rendered-form">
-                <Gender handleChange={handleGender} gender={gender} />
-                <Measurement measurement={measurement} handleChange={handleMeasurement} />
-                <BmrForm 
-                  className="bmr-rendered"
-                  calculate={measurement === "imperial" ? handleImperialBmr : handleMetricBmr}
-                  renderMeasurement={renderMeasurement}
-                  value={TEE}
-                  handleTEE={handleTEE}/> 
-              </div>
-              <div className="bmr-results">
-                <BmrTotal bmr={Math.round(bmr / TEE)} tee={bmr}/>
-              </div>
-            </div>
-            <div className="zones">
-              <Zone bmr={bmr} />
-            </div>
-          </div>
-        <Modal />
-      </div> 
+      : // rendered template
+        <div className='rendered-top-div'>
+              <div className="form-bmr">
+                <div className="rendered-form animated slideInRight">
+                  <h1 className="zone-header">Calorie Zones</h1>
+                  <Gender handleChange={handleGender} gender={gender} />
+                  <Measurement measurement={measurement} handleChange={handleMeasurement} />
+                  <BmrForm 
+                    className="bmr-rendered"
+                    calculate={measurement === "imperial" ? handleImperialBmr : handleMetricBmr}
+                    renderMeasurement={renderMeasurement}
+                    value={TEE}
+                    handleTEE={handleTEE}
+                  /> 
+                  </div>
+                </div>
+                <div className='results'>
+                  <div className="bmr-results animated fadeInUp delay-1s">
+                    <BmrTotal bmr={Math.round(bmr / TEE)} tee={bmr}/>
+                  </div>
+                  <div className="zones">
+                      <Zone bmr={bmr} />
+                  </div>
+                </div>
+                <Modal />
+        </div>
 
     return (
         renderBmrZone
