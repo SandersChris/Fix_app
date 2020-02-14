@@ -4,8 +4,9 @@ import './Bmr.styles.css'
 
 import { ReactComponent as Run } from '../../assets/directions_run-24px.svg'
 import { ReactComponent as Sit } from '../../assets/airline_seat_recline_normal-24px.svg'
+import { ReactComponent as Stand } from '../../assets/accessibility-24px.svg'
 
-const BmrTotal = ({ bmr, tee}) => {
+const BmrTotal = ({ bmr, tee, bmi}) => {
     // being overwritten because it is inline
 
     // Basal Metabolic Rate (BMR) is how much energy your body requires for basic bodily functions at rest. This includes breathing, blood circulation, and regulating body temperature, as well as many other processes.
@@ -16,12 +17,18 @@ const BmrTotal = ({ bmr, tee}) => {
         <div className='bmr-top-div'>
             <div>
                 <span className='sit'><Sit /></span>
-                <span className='bmr'>Basal Metabolic Rate: {bmr}</span>
+                <span className='bmr'>Basal Metabolic Rate: {bmr} Cal</span>
+                <span className='run'><Run /></span>
+                <span className='tee'>Total Energy Expenditure: {tee} Cal</span>
+                <span className='stand'><Stand /></span>
+                <span className='bmi'>Body Mass Index: {bmi}</span>
             </div>
+            {/*}
             <div className="tee-container">
                 <span className='run'><Run /></span>
-                <span className='tee'>Total Energy Expenditure: {tee}</span>
+                <span className='tee'>Total Energy Expenditure: {tee} Cal</span>
             </div>
+            {*/}
         </div>
     )
 }

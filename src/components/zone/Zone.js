@@ -14,7 +14,9 @@ const Zone = ({ bmr }) => {
     return(
         <div className="parentDiv">
             <div className="info">
-                <div className="red animated fadeInLeft delay-1s"><ZoneInfo /></div>
+                    <div className="red animated fadeInLeft delay-1s">
+                        <ZoneInfo />
+                    </div>
                 <div className="yellow animated fadeInRight delay-1s"><ZoneInfo /></div>
                 <div className="green animated fadeInLeft delay-1s"><ZoneInfo /></div>
                 <div className="doubleRed animated fadeInRight delay-1s"><ZoneInfo /></div>

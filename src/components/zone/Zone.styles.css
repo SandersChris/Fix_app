@@ -1,23 +1,23 @@
 .parentDiv {
     display: flex;
     flex-direction: row;
-    height: 800px;
+    height: 100%;
     left: 55%;
     width: 100%;
     margin-bottom: 75px;
 }
 
-.info {
-    text-align: center;
-    color: #faf9f9;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    row-gap: 20px
+.yellowHigh {
+    padding-top: 20px;
+    padding-left: 30px;
+    margin-bottom: -10px;
+    font-size: 17px;
 }
 
 .red {
-    width: 375px;
-    height: 175px;
+    width: 250px;
+    height: 125px;
+    margin-left: 50px;
     background-color: #f0134d;
     border: #f0134d 5px solid;
     border-radius: 6px;
@@ -26,9 +26,9 @@
 }
 
 .yellow {
-    width: 375px;
-    height: 175px;
-    margin-left: 100px;
+    width: 240px;
+    height: 120px;
+    margin-left: 230px;
     background-color: #ffdc34;
     border: #ffdc34 5px solid;
     border-radius: 6px;
@@ -37,8 +37,9 @@
 }
 
 .green {
-    width: 375px;
-    height: 175px;
+    width: 230px;
+    height: 115px;
+    margin-left: 50px;
     background-color: #15cda8;
     border: #15cda8 5px solid;
     border-radius: 6px;
@@ -47,9 +48,9 @@
 }
 
 .doubleRed {
-    width: 375px;
-    height: 175px;
-    margin-left: 100px;
+    width: 220px;
+    height: 110px;
+    margin-left: 230px;
     background-color: #940a37;
     border: #940a37 5px solid;
     border-radius: 6px;
@@ -62,24 +63,6 @@
 .allZones {
     padding-left: 5px;
     font-weight: bold;
-}
-
-.yellowHigh {
-    padding-top: 88px;
-    padding-left: 20px;
-    height: 39px;
-}
-
-.greenHigh {
-    padding-top: 196px;
-    padding-left: 20px;
-    height: 39px;
-}
-
-.redHigh {
-    padding-top: 197px;
-    padding-left: 20px;
-    height: 39px;
 }
 
 /* help positioning */

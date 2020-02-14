@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import roundTo from 'round-to'
 
 import BmrForm from '../bmrForm/BmrForm'
 import BmrTotal from '../bmr/Bmr'
@@ -29,6 +30,8 @@ const ZoneFormRefactored = () => {
     const [age, setAge] = useState('')
     // total energy expenditure
     const [TEE, setTEE] = useState(0)
+    // bmi
+    const [bmi, setBmi] = useState(0)
 
     const [ gender, setGender ] = useState('male')
 
@@ -66,6 +69,9 @@ const ZoneFormRefactored = () => {
 
     const handleMetricBmr = (event) => {
         event.preventDefault()
+
+        setBmi(roundTo(1.3 * (kilograms / ((centimeters / 100) ** 2.5)), 2))
+
         if (gender === "male") 
           setBmr(Math.round(((10 * kilograms) + (6.25 * centimeters) - (5 * age) + 5) * TEE))
         else
@@ -75,15 +81,21 @@ const ZoneFormRefactored = () => {
     const handleImperialBmr = (event) => {
         event.preventDefault()
         if (inches === '') setInches(0)
+
+        const metricHeightExponentConvert = ((((((feet * 12) + inches) * 2.54) / 100)) ** 2.5)
         // conversions for equation
         const metricHeightConvert = ((feet * 12) + inches) * 2.54
         const metricWeightConvert = (pounds * 0.4535)
+
+        setBmi(roundTo(1.3 * (metricWeightConvert / metricHeightExponentConvert), 2))
         // Harris Benedict Formula with TEE 
         if (gender === 'male')
           setBmr(Math.round(((10 * metricWeightConvert) + (6.25 * metricHeightConvert) - (5 * age) + 5) * TEE))
         else 
           setBmr(Math.round(((10 * metricWeightConvert) + (6.25 * metricHeightConvert) - (5 * age) - 161) * TEE))  
     }
+
+    console.log(bmi)
 
     // ternery for bmr and zone rendering 
     const renderBmrZone = bmr === 0 || isNaN(bmr / TEE)
@@ -120,16 +132,18 @@ const ZoneFormRefactored = () => {
                     handleTEE={handleTEE}
                   /> 
                   </div>
-                </div>
-                <div className='results'>
-                  <div className="bmr-results animated fadeInUp delay-1s">
-                    <BmrTotal bmr={Math.round(bmr / TEE)} tee={bmr}/>
-                  </div>
+              </div>
+              <div className='zone-results'>
                   <div className="zones">
                       <Zone bmr={bmr} />
                   </div>
+              </div>
+              <div className='bmr-results-container'>
+                <div className="bmr-results animated fadeInUp delay-1s">
+                  <BmrTotal bmr={Math.round(bmr / TEE)} tee={bmr} bmi={bmi}/>
                 </div>
-                <Modal />
+              </div>
+                
         </div>
 
     return (

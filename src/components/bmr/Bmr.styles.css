@@ -1,13 +1,30 @@
 .bmr-top-div {
-    text-align: center;
     padding-top: 35px;
-    
+    padding-bottom: 35px;
+    padding-left: 65px;
+    padding-right: 45px;
+}
+
+.bmi {
+    padding-left: 125px;
 }
 
 .sit {
     position: absolute;
     top: 34px;
-    left: 65px;
+    left: 70px;
+}
+
+.run {
+    position: absolute;
+    left: 411px;
+    top: 33px;
+}
+
+.stand {
+    position: absolute;
+    top: 34px;
+    right: 255px;
 }
 
 .tee-container {
@@ -15,17 +32,6 @@
     padding-right: 5px;
 }
 
-.run {
-    position: absolute;
-    left: 65px;
-    top: 105px;
-}
-
-.bmr {
-    padding-right: 35px;
-}
-
-.recalculate-button {
-    padding-top: 40px;
-    padding-right: 35px;
+.tee {
+    padding-left: 115px;
 }
