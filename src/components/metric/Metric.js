@@ -6,6 +6,15 @@ import './Metric.styles.css'
 
 const Metric = (props) => {
 
+    const isNumberKey = event => {
+        const charCode = (event.which)
+        if ((charCode > 31 && (charCode < 48 || charCode > 57 ))) {
+            event.preventDefault()
+        }
+
+        return true
+    }
+
     const inputProps = {
         size: 8,
         maxLength: 3
@@ -13,9 +22,45 @@ const Metric = (props) => {
 
     return (
         <div id="top-spacing">
-            <div id="spacingWeight"> <TextField id="outlined-helperText" label="Weight" helperText="kg" value={props.weight} onChange={props.handleWeight} inputProps={inputProps} margin="normal" variant="outlined"/></div>
-            <div id="spacingHeight"> <TextField id="outlined-helperText" label="Height" helperText="cm" value={props.height} onChange={props.handleHeight} inputProps={inputProps} margin="normal" variant="outlined"/></div>
-            <div id="spacingAge"><TextField id="outlined-helperText" label="Age" helperText="years" value={props.age} onChange={props.handleAge} inputProps={inputProps} margin="normal" variant="outlined"/></div>
+            <div id="spacingWeight"> 
+                <TextField 
+                    id="outlined-helperText" 
+                    label="Weight" helperText="kg" 
+                    value={props.weight} 
+                    onChange={props.handleWeight} 
+                    inputProps={inputProps} 
+                    margin="normal" 
+                    variant="outlined"
+                    onKeyDown={isNumberKey}
+                />
+            </div>
+            <div id="spacingHeight"> 
+                <TextField
+                    className='height-width'
+                    id="outlined-helperText" 
+                    label="Height" 
+                    helperText="cm" 
+                    value={props.height} 
+                    onChange={props.handleHeight} 
+                    inputProps={inputProps} 
+                    margin="normal" 
+                    variant="outlined"
+                    onKeyDown={isNumberKey}
+                />
+            </div>
+            <div id="spacingAge">
+                <TextField 
+                    id="outlined-helperText" 
+                    label="Age" 
+                    helperText="years" 
+                    value={props.age} 
+                    onChange={props.handleAge} 
+                    inputProps={inputProps} 
+                    margin="normal" 
+                    variant="outlined"
+                    onKeyDown={isNumberKey}
+                />
+            </div>
         </div>
     )
 }

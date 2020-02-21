@@ -5,11 +5,10 @@ import { Link } from 'react-router-dom'
 const NavBar = () => {
     return (
     <nav className="navbar">
-    <span className="navbar-toggle" id="js-navbar-toggle">
-        <i className="fas fa-bars"></i>
-    </span>
-    <Link to='/' className="logo">+</Link>
-    <ul className="main-nav" id="js-menu">
+    <div>
+        <Link to='/' className="logo">+</Link>
+    </div>
+    <ul className="main-nav">
         <li>
             <a href="https://thefixgym.com/" className="nav-links">The Fix Gym</a>
         </li>
@@ -22,6 +21,14 @@ const NavBar = () => {
         <li>
             <a href="https://thefixgym.com/the-fix-life-blog/" className="nav-links">Blog</a>
         </li>
+        <div className='signup-login'>
+        <li className='login'>
+            <p>Log In</p>
+        </li>
+        <li className='signup'>
+            <button className='signup-btn'>Sign Up</button>
+        </li>
+        </div>
     </ul>
     </nav>
     )

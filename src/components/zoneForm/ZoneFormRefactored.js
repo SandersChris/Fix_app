@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import roundTo from 'round-to'
+import axios from 'axios'
 
-import BmrForm from '../bmrForm/BmrForm'
 import BmrTotal from '../bmr/Bmr'
 import Zone from '../zone/Zone'
 import Imperial from '../imperial/Imperial'
 import Metric from '../metric/Metric'
-import Measurement from '../measurement/Measurement'
-import Gender from '../gender/Gender'
+import SingleZoneForm from '../single-zone-form/SingleZoneForm'
 import Modal from '../../Modal'
+import RecalculateModal from '../recalculate-modal/RecalculateModal'
+
+import { ReactComponent as DownArrow } from '../../assets/keyboard_arrow_down-24px.svg'
 
 import './zone-form-refactored.styles.css'
 // state may be updating everytime a letter is typed, updating too often see if this should be changed
@@ -34,6 +36,7 @@ const ZoneFormRefactored = () => {
     const [bmi, setBmi] = useState(0)
 
     const [ gender, setGender ] = useState('male')
+    const [ email, setEmail ] = useState('')
 
     // handles input changes 
     const handleKilograms = event => setKilograms(Number(event.target.value))
@@ -46,8 +49,26 @@ const ZoneFormRefactored = () => {
     const handleMeasurement = event => setMeasurement(event.target.value)
     const handleGender = event => setGender(event.target.value)
 
+    const emailValidated = email.length > 6 && email.includes('@') && email.includes('.')
+
+    const handleChange = event => {
+      const email = event.target.value
+      setEmail(email)
+    }
+
+    const handleSubmit = (e) => {
+      if (emailValidated) {
+          console.log(email)
+          axios(`http://127.0.0.1:4000/caloriezones/email?email=${email}&bmr=${Math.round(bmr / TEE)}&tee=${bmr}&bmi=${bmi}`)
+      } else {
+          e.preventDefault()
+      }
+    }
+
+    console.log(window.innerWidth)
+
     // ternary rendering of measurement form (refactor)
-    const renderMeasurement = measurement === "imperial" 
+    const renderMeasurement = measurement === 'imperial' 
     ? <Imperial 
         pounds={pounds} 
         handlePounds={handlePounds} 
@@ -95,43 +116,41 @@ const ZoneFormRefactored = () => {
           setBmr(Math.round(((10 * metricWeightConvert) + (6.25 * metricHeightConvert) - (5 * age) - 161) * TEE))  
     }
 
-    console.log(bmi)
-
     // ternery for bmr and zone rendering 
-    const renderBmrZone = bmr === 0 || isNaN(bmr / TEE)
+    const renderBmrZone = bmr < 650 || isNaN(bmr / TEE)
       ? // unrendered template first
         <div className='form-position'>
-            <div className="top-div" >
-            <div className="unrendered-form" >
-              <h1 className="zone-header">Calorie Zones</h1>
-              <Gender handleChange={handleGender} gender={gender} />
-              <Measurement measurement={measurement} handleChange={handleMeasurement} />
-              <BmrForm 
-                className="bmr-form"
-                calculate={measurement === "imperial" ? handleImperialBmr : handleMetricBmr}
+          <div className='top-div'>
+              <SingleZoneForm 
+                className='unrendered-form'
+                bmrClassName='bmr-form'
+                handleGender={handleGender} 
+                gender={gender}
+                measurement={measurement}
+                handleMeasurement={handleMeasurement}
+                calculate={measurement === 'imperial' ? handleImperialBmr : handleMetricBmr} //refactor
                 renderMeasurement={renderMeasurement}
-                value={TEE}
+                TEE={TEE}
                 handleTEE={handleTEE}
-                />
-            </div>
-            </div>
+              />
+          </div>
         </div>
 
       : // rendered template
         <div className='rendered-top-div'>
               <div className="form-bmr">
-                <div className="rendered-form animated slideInRight">
-                  <h1 className="zone-header">Calorie Zones</h1>
-                  <Gender handleChange={handleGender} gender={gender} />
-                  <Measurement measurement={measurement} handleChange={handleMeasurement} />
-                  <BmrForm 
-                    className="bmr-rendered"
-                    calculate={measurement === "imperial" ? handleImperialBmr : handleMetricBmr}
-                    renderMeasurement={renderMeasurement}
-                    value={TEE}
-                    handleTEE={handleTEE}
-                  /> 
-                  </div>
+                <SingleZoneForm 
+                  className='rendered-form animated slideInRight'
+                  bmrClassName='bmr-rendered'
+                  handleGender={handleGender}
+                  gender={gender}
+                  measurement={measurement}
+                  handleMeasurement={handleMeasurement}
+                  calculate={measurement === 'imperial' ? handleImperialBmr : handleMetricBmr}
+                  renderMeasurement={renderMeasurement}
+                  TEE={TEE}
+                  handleTEE={handleTEE}
+                />
               </div>
               <div className='zone-results'>
                   <div className="zones">
@@ -141,9 +160,23 @@ const ZoneFormRefactored = () => {
               <div className='bmr-results-container'>
                 <div className="bmr-results animated fadeInUp delay-1s">
                   <BmrTotal bmr={Math.round(bmr / TEE)} tee={bmr} bmi={bmi}/>
+                  <RecalculateModal 
+                    className='form-example'
+                    handleGender={handleGender}
+                    gender={gender}
+                    measurement={measurement}
+                    handleMeasurement={handleMeasurement}
+                    calculate={measurement === 'imperial' ? handleImperialBmr : handleMetricBmr}
+                    renderMeasurement={renderMeasurement}
+                    TEE={TEE}
+                    handleTEE={handleTEE}
+                  />
                 </div>
               </div>
-                
+              <div className='down-arrow-rendered'>
+                <DownArrow />
+              </div>
+              <Modal email={email}  handleSubmit={handleSubmit} handleChange={handleChange}/>
         </div>
 
     return (

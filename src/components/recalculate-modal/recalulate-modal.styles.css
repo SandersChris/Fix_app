@@ -1,0 +1,28 @@
+@media only screen and (min-width: 1029px){
+    .open-btn {
+        display: none;
+    }
+}
+
+.recalculate {
+    position: relative;
+    border: 1px solid #c72c41;
+    background-color: white;
+    color: #c72c41;
+    width: 575px;
+    height: 50px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.recalculate:hover {
+    background-color: #c72c41;
+    color: white;
+}
+
+.btn-position {
+    position: relative;
+    left: 40px;
+}

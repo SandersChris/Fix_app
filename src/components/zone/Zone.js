@@ -1,5 +1,6 @@
 import React from "react";
-import ZoneInfo from '../zoneInfo/ZoneInfo'
+
+import TopZoneInfo from '../top-zone-info/TopZoneInfo'
 
 import './Zone.styles.css'
 
@@ -12,14 +13,25 @@ const Zone = ({ bmr }) => {
     const green = Math.round(bmr - (bmr * 0.30))
     
     return(
-        <div className="parentDiv">
-            <div className="info">
-                    <div className="red animated fadeInLeft delay-1s">
-                        <ZoneInfo />
+        <div className='parentDiv'>
+            <div className='info'>
+                    <div className='red animated fadeInLeft delay-1s'>
+                        <TopZoneInfo />
                     </div>
-                <div className="yellow animated fadeInRight delay-1s"><ZoneInfo /></div>
-                <div className="green animated fadeInLeft delay-1s"><ZoneInfo /></div>
-                <div className="doubleRed animated fadeInRight delay-1s"><ZoneInfo /></div>
+                <div>
+                    <div className='yellowHigh animated fadeInDown delay-1s'>{yellowHigh} Calories</div>
+                    <div className='yellow animated fadeInRight delay-1s'>
+                        <TopZoneInfo />
+                    </div>
+                </div>
+                <div>
+                    <div className='green animated fadeInLeft delay-1s'><TopZoneInfo /></div>
+                    <p className='yellowLow animated fadeInDown delay-1s'>{yellowLow} Calories</p>
+                </div>
+                <div>
+                    <div className='doubleRed animated fadeInRight delay-1s'><TopZoneInfo /></div>
+                    <div className='green-low animated fadeInDown delay-1s'>{green} Calories</div>
+                </div>
             </div>
         </div>
     )

@@ -8,9 +8,8 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator'
 
-export default function FormDialog() {
+export default function FormDialog({ email, handleSubmit, handleChange }) {
   const [open, setOpen] = useState(true)
-  const [email, setEmail] = useState('')
 
   const emailValidated = email.length > 6 && email.includes('@') && email.includes('.')
 
@@ -20,19 +19,6 @@ export default function FormDialog() {
     } else {
         setOpen(true)
     }
-  }
-
-  const handleSubmit = (e) => {
-    if (emailValidated) {
-        console.log(email)
-    } else {
-        e.preventDefault()
-    }
-  }
-
-  const onChange = event => {
-      const email = event.target.value
-      setEmail(email)
   }
 
   return ReactDOM.createPortal(
@@ -50,7 +36,7 @@ export default function FormDialog() {
           <TextValidator
             autoFocus
             value={email}
-            onChange={onChange}
+            onChange={handleChange}
             validators={['required', 'isEmail']}
             errorMessages={['this field is required', 'invalid email']}
             margin="dense"

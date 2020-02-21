@@ -1,8 +1,22 @@
 .bmr-top-div {
-    padding-top: 35px;
+    padding-top: 25px;
     padding-bottom: 35px;
-    padding-left: 65px;
+    padding-left: 35px;
     padding-right: 45px;
+}
+
+.border-right {
+    position: relative;
+    top: 2px;
+    left: 65px;
+    border-right: #cccccc 1px solid;
+}
+
+.border-left {
+    position: relative;
+    top: 2px;
+    left: 56px;
+    border-right: #cccccc 1px solid;
 }
 
 .bmi {
@@ -10,21 +24,21 @@
 }
 
 .sit {
-    position: absolute;
-    top: 34px;
-    left: 70px;
+    position: relative;
+    top: 7px;
+    left: -7px;
 }
 
 .run {
-    position: absolute;
-    left: 411px;
-    top: 33px;
+    position: relative;
+    left: 108px;
+    top: 7px;
 }
 
 .stand {
-    position: absolute;
-    top: 34px;
-    right: 255px;
+    position: relative;
+    top: 7px;
+    left: 115px;
 }
 
 .tee-container {
@@ -35,3 +49,205 @@
 .tee {
     padding-left: 115px;
 }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 20%;
+    margin-left: -60px;
+  }
+
+  .obese {
+      position: relative;
+      margin-right: 10px;
+      padding-bottom: 7px;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+@media only screen and (max-width: 1100px) {
+    .border-left {
+        left: 30px;
+    }
+
+    .border-right {
+        left: -10px;
+    }
+
+    .stand {
+        position: relative;
+        top: -23px;
+        left: 660px;
+    }
+
+    .bmi {
+        position: relative;
+        left: 170%;
+        top: -30px;
+    }
+
+    .run {
+        left: 60px;
+    }
+
+    .tee {
+        position: relative;
+        right: 44px;
+    }
+
+    .tooltip .bmi-tooltext {
+        visibility: hidden;
+        width: 100%;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: 15px;
+        left: 200%;
+        margin-left: -60px;
+      }
+
+    .tooltip .bmi-tooltext::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent black transparent;
+      }
+} 
+
+@media only screen and (min-width: 1029px) {
+    .recalculate {
+        display: none;
+    } 
+
+    .bmr-small {
+        display: none;
+    }
+
+    .little-tee {
+        display: none;
+    }
+
+    .bmi-small {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1028px) {
+    .run {
+        left: 65px;
+        top: 6px;
+    }
+
+    .tee {
+        display: none;
+    }
+
+    .little-tee {
+        position: relative;
+        right: -70px;
+        top: 0;
+    }
+
+    .stand {
+        left: 150px;
+        top: 4px;
+    }
+
+    .bmi {
+        display: none;
+    }
+
+    .bmi-small {
+        position: relative;
+        left: 160px;
+        bottom: 0px;
+    }
+
+    .bmr {
+        display: none;
+    }
+
+    .bmr-small {
+        position: relative;
+        right: 25px;
+    }
+    
+    .sit {
+        position: relative;
+        top: 7px;
+        left: -30px;
+    }
+
+    .bmr-top-div {
+        padding-left: 50px;
+    }
+
+    .recalculate {
+        position: relative;
+        top: 0px;
+        left: -30px;
+        border: 1px solid #c72c41;
+        background-color: white;
+        color: #c72c41;
+        width: 575px;
+        height: 50px;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 2px;
+    }
+
+    .recalculate:hover {
+        background-color: #c72c41;
+        color: white;
+    }
+
+    .border-left {
+        position: relative;
+        left: 19px;
+        border-right: #cccccc 1px solid;
+    }
+
+    .border-right {
+        position: relative;
+        left: 125px;
+        border-right: #cccccc 1px solid;
+    }
+}
+
+

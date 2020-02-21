@@ -1,4 +1,39 @@
 .email-contact-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    text-align: center;
     background-color: white;
-    height: 200px;
+    height: 100%;
+}
+
+.header {
+    font-size: 30px;
+    font-family: 'Cambay', sans-serif;
+}
+
+.info {
+    color: #3c4245;
+    font-size: 19px;
+}
+
+.btn-container {
+    padding-top: 15px;
+}
+
+.mainsite-btn {
+    border: 2px solid #c72c41;
+    background-color: white;
+    color: #c72c41;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.mainsite-btn:hover {
+    background-color: #c72c41;
+    color: white;
 }

@@ -1,8 +1,8 @@
 import React from "react";
 
-import './ZoneInfo.styles.css'
+import './top-zone-info.styles.css'
 
-const ZoneInfo = ({para, zone, head}) => {
+const TopZoneInfo = ({para, zone, head}) => {
 
     return (
         <div>
@@ -13,4 +13,4 @@ const ZoneInfo = ({para, zone, head}) => {
     )
 }
 
-export default ZoneInfo
+export default TopZoneInfo

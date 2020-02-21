@@ -1,16 +1,27 @@
 #spacingWeight {
     height: 90px;
+    width: 100px;
 }
 
-#spacingHeight {
-    height: 90px;
+.feet {
+    width: 100px;
+}
+
+.height-width {
+    width: 100px;
+}
+
+.inches-width {
+    width: 75px;
 }
 
 #spacingInches {
     padding-left: 5px;
 }
 
+
 #spacingAge {
     margin-bottom: 15px;
     height: 80px;
+    width: 100px;
 }

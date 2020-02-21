@@ -97,9 +97,11 @@ const ZoneInfo = () => {
                         Calorie Zones utilize the 1990 revised 
                         Harris-Benedict equation for basal metabolic
                         rate to create an intuitive look into calorie 
-                        intake and its effect on weight. Believe it or 
-                        not, this the only weight loss calculator
-                        you will ever need.
+                        intake and its effect on weight. The calculator 
+                        above will show you your various caloric
+                        thresholds for gaining, 
+                        maintaining, and losing weight on a typical 
+                        day.
                     </p>
                 </div>
             </div>
@@ -143,7 +145,7 @@ const ZoneInfo = () => {
                 <ZoneInfoIndividual 
                     ref={sectionRefDoubleRed}
                     sectionClassName='yellow-and-double-red-zone-container fadeInDoubleRed'
-                    textContainer='yellow-and-double-red-zone-text-container'
+                    textContainer='double-red-container'
                     headerClassName='double-red-zone-header' 
                     header='Double Red Zone'
                     text='Represents any caloric intake below 30% of Total

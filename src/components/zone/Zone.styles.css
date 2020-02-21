@@ -5,56 +5,74 @@
     left: 55%;
     width: 100%;
     margin-bottom: 75px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .yellowHigh {
-    padding-top: 20px;
-    padding-left: 30px;
-    margin-bottom: -10px;
-    font-size: 17px;
+    position: relative;
+    font-size: 20px;
+    top: 1px;
+    left: 230px;
+    height: 0;
+}
+
+.yellowLow {
+    position: relative;
+    height: 0;
+    font-size: 20px;
+    bottom: 152px;
+    left: 230px;
+}
+
+.green-low {
+    position: relative;
+    font-size: 20px;
+    height: 0;
+    bottom: 152px;
+    left: 230px;
 }
 
 .red {
-    width: 250px;
+    width: 90%;
     height: 125px;
     margin-left: 50px;
     background-color: #f0134d;
-    border: #f0134d 5px solid;
-    border-radius: 6px;
-    filter: drop-shadow(0px 0px 6px gray);
+    border: #f0134d 1px solid;
+    border-radius: 5px;
+
     padding-bottom: 10px;
 }
 
 .yellow {
-    width: 240px;
-    height: 120px;
-    margin-left: 230px;
+    width: 90%;
+    height: 125px;
+    margin-left: 50px;
     background-color: #ffdc34;
     border: #ffdc34 5px solid;
-    border-radius: 6px;
-    filter: drop-shadow(0px 0px 6px gray);
+    border-radius: 5px;
+
     margin-top: 30px;
 }
 
 .green {
-    width: 230px;
-    height: 115px;
+    width: 90%;
+    height: 125px;
     margin-left: 50px;
     background-color: #15cda8;
     border: #15cda8 5px solid;
-    border-radius: 6px;
-    filter: drop-shadow(0px 0px 6px gray);
+    border-radius: 5px;
+
     margin-top: 30px;
 }
 
 .doubleRed {
-    width: 220px;
-    height: 110px;
-    margin-left: 230px;
+    width: 460px;
+    height: 125px;
+    margin-left: 48px;
     background-color: #940a37;
     border: #940a37 5px solid;
-    border-radius: 6px;
-    filter: drop-shadow(0px 0px 6px gray);
+    border-radius: 5px;
+
     margin-top: 30px;
 }
 
@@ -65,19 +83,40 @@
     font-weight: bold;
 }
 
-/* help positioning */
+@media only screen and (max-width: 1028px) {
+    .red {
+        position: relative;
+        right: 3%;
+        width: 700px;
+    }
+    
+    .yellow {
+        position: relative;
+        right: 3%;
+        width: 700px;
+    }
 
-.yellowHelp {
-    top: 160px;
-    right: -70px;
-}
+    .green {
+        position: relative;
+        right: 3%;
+        width: 700px;
+    }
 
-.greenHelp {
-    top: 184px;
-    right: -70px;
-}
+    .doubleRed {
+        position: relative;
+        right: 3%;
+        width: 700px;
+    }
 
-.doubleRedHelp {
-    top: 182;
-    right: -70;
+    .yellowHigh {
+        left: 42%;
+    }
+
+    .yellowLow {
+        left: 42%;
+    }
+
+    .green-low {
+        left: 42%;
+    }
 }

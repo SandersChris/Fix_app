@@ -4,31 +4,61 @@
     margin: 0;
 }
 
-body {
-    font-family: 'Noto serif', sans-serif;
-}
-
 .navbar {
-    font-size: 13px;
+    display: block;
+    font-size: 14px;
     background: white;
     padding-bottom: 10px;
-    height: 60px;
+    height: 0px;
     width: 100%;
-    top: 0;
-    border-bottom: 1px solid #cccccc;
     z-index: 1020;
 }
 
 .main-nav {
+    position: relative;
+    bottom: 54px;
+    left: 40px;
     list-style-type: none;
-    display: none;
+    overflow: hidden;
+    margin: 0;
+}
+
+.login {
+    float: right;
+    position: relative;
+    bottom: 23px;
+    right: 135px;
+    color: #333333
+}
+
+.signup {
+    float: right;
+    position: relative;
+    right: -28px;
+    bottom: 33px;
+}
+
+.signup-btn {
+    border: 1px solid #c72c41;
+    background-color: white;
+    color: #c72c41;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.signup-btn:hover {
+    background-color: #c72c41;
+    color: white;
 }
 
 .nav-links {
+    position: relative;
+    top: 0;
     text-decoration: none;
-    color: black;
-    font-weight: 900;
-    font-family: 'Noto-Serif', sans-serif;
+    float: left;
+    color: #333333;
 }
 
 .logo {
@@ -63,26 +93,25 @@ body {
 
 @media screen and (min-width: 768px) {
     .navbar {
-        display: flex;
-        justify-content: left;
-        padding-bottom: 0;
-        padding-left: 64px;
-        padding-right: 64px;
+        display: block;
+        margin: 0;
+        padding: 0;
+        padding-left: 130px;
+        padding-right: 130px;
         height: 69px;
-        align-items: center;
         width: 100%;
     }
 
     .main-nav {
-        display: flex;
+        position: relative;
+        bottom: 80px;
         margin-right: 30px;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        height: 100%;
     }
 
     .main-nav li {
         margin: 0;
+        margin-top: 25px;
     }
 
     .nav-links {
@@ -98,7 +127,6 @@ body {
         display: none;
     }
 
-    .logo:hover,
     .nav-links:hover {
         color: #d7d1c9;
     }

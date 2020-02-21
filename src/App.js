@@ -5,6 +5,8 @@ import AppBar from './components/appbar/AppBar'
 
 import HomePage from './pages/HomePage'
 import CalorieZones from './pages/CalorieZones'
+import EmailContact from './components/email-contact/EmailContact'
+import Footer from './components/footer/Footer'
 // start on the left and let the blocks build up 
 // div issue starts at below 844
 // add mobile accessibility design
@@ -26,6 +28,8 @@ function App() {
         <Route exact path='/' component={HomePage} />
         <Route exact path='/caloriezones' component={CalorieZones} />
       </Switch>
+      <EmailContact />
+      <Footer />
     </div>
   )
 }

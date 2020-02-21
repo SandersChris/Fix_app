@@ -56,7 +56,7 @@ const BmrForm = (props) => {
             <form onSubmit={props.calculate}>
                 <div className="test">{props.renderMeasurement}</div>
                 <div className="selectPosition">
-                  <HelpTip tip={'This select menu translates your physical activity level (PAL) into a number. If you plan on The Fix being your only source of exercise, we reccommend selecting "Moderately Active".'} />
+                  <HelpTip tip={'This select menu translates your physical activity level (PAL) into a number. If you plan on The Fix being your only source of exercise, we reccommend selecting "Lightly Active".'} />
                   <FormControl variant='outlined' className={classes.root}>
                   <InputLabel ref={inputLabel} >Select Activity Level</InputLabel>
                   <StyledSelect value={props.value} inputProps={inputProps} labelWidth={labelWidth} autoWidth={true} onChange={props.handleTEE}>
@@ -70,7 +70,7 @@ const BmrForm = (props) => {
                   </FormControl>
                 </div>
                 <div className="buttonPosition">
-                  <StyledButton type="submit" variant="contained" color="default">
+                  <StyledButton onClick={props.handleClick} type="submit" variant="contained" color="default">
                   Calculate
                   </StyledButton>
                 </div>

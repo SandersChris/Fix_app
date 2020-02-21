@@ -1,0 +1,187 @@
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #222831; 
+    height: 350px;
+    margin-top: 120px;
+    margin-bottom: -100px;
+    color: white;
+}
+
+.container-1 {
+    margin-top: 50px;
+    width: 33%;
+    height: 80%;
+    border-right: #cccccc 0.5px solid;
+}
+
+.footer-logo {
+    position: relative;
+    display: inline-block;
+    top: -11px;
+    left: 30%;
+    font-size: 100px;
+    font-weight: bold;
+    color: #c72c41;
+    transform: rotate(45deg);
+}
+
+.title {
+    position: relative;
+    top: -35%;
+    left: 45%;
+    font-size: 32px;
+    color: #ededed
+}
+
+.copyright {
+    position: relative;
+    bottom: 32%;
+    left: 45%;
+    font-size: 14px;
+    color: #ededed;
+}
+
+.container-2 {
+    width: 33%;
+    height: 80%;
+}
+
+.links-1 {
+    position: relative;
+    left: 10%;
+    top: 18%;
+}
+
+.links-2 {
+    position: relative;
+    left: 60%;
+    bottom: 45%;
+
+}
+
+.helpful-links {
+    padding-bottom: 5px;
+}
+
+a {
+    font-size: 14px;
+    color: #c9485b;
+}
+
+.container-3 {
+    margin-top: 50px;
+    width: 33%;
+    height: 80%;
+    border-left: #cccccc 1px solid;
+}
+
+.footer-contact {
+    position: relative;
+    left: 10%;
+}
+
+.contact-header {
+    padding-bottom: 5px;
+}
+
+.contact-method {
+    font-size: 15px;
+    color: #ebe6e6;
+}
+
+.contact-info {
+    font-size: 14px;
+    color: #c9485b;
+    padding-left: 5px;
+}
+
+.mailing-continued {
+    position: relative;
+    bottom: 5px;
+    left: 60px;
+}
+
+@media only screen and (max-width: 1170px) {
+    .container-1 {
+        position: relative;
+        left: 29%;
+        bottom: 13%;
+        border: none;
+    }
+
+    .footer-logo {
+        top: 40px;
+        left: 27%;
+    }
+
+    .title {
+        top: -12%;
+    }
+
+    .copyright {
+        top: -12%;
+    }
+
+    .container-2 {
+        position: relative;
+        right: 25%;
+        top: 25%;
+    }
+
+    .links-2 {
+        bottom: 26%;
+    }
+
+    .container-3 {
+        position: relative;
+        top: 26%;
+        right: 16%;
+        height: 55%;
+    }
+
+    .footer-contact {
+        top: 3%;
+        left: 30%;
+    }
+
+    .empty-div {
+        grid-area: emptyArea
+    }
+
+   .footer-container {
+       height: 500px;
+   }
+
+   .mailing-continued {
+       position: relative;
+       bottom: 5px;
+       right: 53px;
+   }
+}
+
+@media only screen and (max-width: 1028px) {
+    .links-2 {
+        left: 65%;
+    }
+}
+
+@media only screen and (max-width: 963px) {
+    .footer-logo {
+        left: 25%;
+    }
+
+    .links-1 {
+        left: 5%;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .footer-logo {
+        left: 20%;
+    }
+
+    .links-1 {
+        left: 0%;
+    }
+}
