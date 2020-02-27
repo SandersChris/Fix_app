@@ -65,8 +65,6 @@ const ZoneFormRefactored = () => {
       }
     }
 
-    console.log(window.innerWidth)
-
     // ternary rendering of measurement form (refactor)
     const renderMeasurement = measurement === 'imperial' 
     ? <Imperial 

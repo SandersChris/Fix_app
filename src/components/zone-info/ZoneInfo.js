@@ -8,6 +8,10 @@ import './zone-info.styles.css'
 // look for refactors
 // transition in quicker with the calorie zones
 
+gsap.config({
+    nullTargetWarn: true
+})
+
 const ZoneInfo = () => {
     const sectionRef = useRef(null)
     const sectionRefRed = useRef(null)
