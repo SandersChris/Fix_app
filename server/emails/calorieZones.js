@@ -1,11 +1,8 @@
 const sgMail = require('@sendgrid/mail')
 
-const sendgridAPIKey = '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'
+sgMail.setApiKey(process.env.SENDGRID_KEY)
 
-
-sgMail.setApiKey(sendgridAPIKey)
-
-const sendFoodBlockInfo = async (email, bmr, tee, bmi) => {
+const sendCalorieZoneInfo = async (email, bmr, tee, bmi) => {
     sgMail.send({
         to: 'christopherdksanders@gmail.com',
         from: 'christopherdksanders@gmail.com',
@@ -15,5 +12,5 @@ const sendFoodBlockInfo = async (email, bmr, tee, bmi) => {
 }
 
 module.exports = {
-    sendFoodBlockInfo
+    sendCalorieZoneInfo
 }

@@ -9,7 +9,6 @@
     font-size: 14px;
     background: white;
     padding-bottom: 10px;
-    height: 0px;
     width: 100%;
     z-index: 1020;
 }
@@ -91,13 +90,13 @@
     display: block;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 726px) {
     .navbar {
         display: block;
         margin: 0;
         padding: 0;
-        padding-left: 130px;
-        padding-right: 130px;
+        padding-left: 3%;
+        padding-right: 3%;
         height: 69px;
         width: 100%;
     }
@@ -131,3 +130,4 @@
         color: #d7d1c9;
     }
 }
+

@@ -1,19 +1,20 @@
 const express = require('express')
 const cors = require('cors')
-const { sendFoodBlockInfo } = require('./emails/foodBlocks')
+const { sendCalorieZoneInfo } = require('./emails/calorieZones')
 
 const app = express()
+const port = process.env.PORT || 4000
 
 app.use(cors())
 
 app.get('/caloriezones/email', async (req, res) => {
     try {
-        sendFoodBlockInfo(req.query.email, req.query.bmr, req.query.tee, req.query.bmi)
+        sendCalorieZoneInfo(req.query.email, req.query.bmr, req.query.tee, req.query.bmi)
     } catch (e) {
         res.status(400).send(e)
     }
 })
 
-app.listen(4000, () => {
+app.listen(port, () => {
     console.log('running on port 4000')
 })

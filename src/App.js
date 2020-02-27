@@ -15,7 +15,6 @@ import Footer from './components/footer/Footer'
 
 function App() {
   const mainStyle = {
-    paddingBottom: 100,
     fontFamily: 'Nunito Sans',
     overflowX: 'hidden',
     overflowY: 'hidden'

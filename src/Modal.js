@@ -24,10 +24,10 @@ export default function FormDialog({ email, handleSubmit, handleChange }) {
   return ReactDOM.createPortal(
     <div>
       <Dialog open={open} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Food Blocks</DialogTitle>
+        <DialogTitle id="form-dialog-title">Calorie Zones</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Thanks for using our food blocks calculator! What email address would you like us to
+            Thanks for using our calorie zone calculator! What email address would you like us to
             send your results?
           </DialogContentText>
           <ValidatorForm

@@ -46,7 +46,6 @@ const BmrTotal = ({ bmr, tee, bmi }) => {
                             </div>
                         BMI (body mass index) measurements do not account for muscle mass. Therefore, this measurement will be more accurate for sedentary individuals compared to active
                         ones. For example, many Olympic athletes fall into the overweight category.
-
                     </span>
                     <span className='bmi'>Body Mass Index: {bmi}</span>
                     <span className='bmi-small'>BMI: {bmi}</span>

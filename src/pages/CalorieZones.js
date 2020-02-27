@@ -13,7 +13,6 @@ const CalorieZones = () => {
   const formPosition = {
     display: 'flex',
     justifyContent: 'center',
-    marginLeft: 10,
   }
 
   return (
