@@ -59,7 +59,7 @@ const ZoneFormRefactored = () => {
     const handleSubmit = (e) => {
       if (emailValidated) {
           console.log(email)
-          axios(`caloriezones/email?email=${email}&bmr=${Math.round(bmr / TEE)}&tee=${bmr}&bmi=${bmi}`)
+          axios(`/caloriezones/email?email=${email}&bmr=${Math.round(bmr / TEE)}&tee=${bmr}&bmi=${bmi}`)
       } else {
           e.preventDefault()
       }
