@@ -7,7 +7,7 @@ const port = process.env.PORT || 4000
 
 app.use(cors())
 
-app.get('/caloriezones/email', async (req, res) => {
+app.get('caloriezones/email', async (req, res) => {
     try {
         sendCalorieZoneInfo(req.query.email, req.query.bmr, req.query.tee, req.query.bmi)
     } catch (e) {
