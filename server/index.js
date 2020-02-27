@@ -3,7 +3,7 @@ const cors = require('cors')
 const { sendCalorieZoneInfo } = require('./emails/calorieZones')
 
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT || 4000
 
 app.use(cors())
 
