@@ -3,7 +3,7 @@ const cors = require('cors')
 const { sendCalorieZoneInfo } = require('./emails/calorieZones')
 
 const app = express()
-const port = process.env.PORT || 4000
+const port = process.env.PORT
 
 app.use(cors())
 
@@ -16,5 +16,5 @@ app.get('/caloriezones/email', async (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('running on port 4000')
+    console.log(`running on port ${port}`)
 })
