@@ -59,7 +59,7 @@ const ZoneFormRefactored = () => {
     const handleSubmit = (e) => {
       if (emailValidated) {
           console.log(email)
-          axios(`http://127.0.0.1:4000/caloriezones/email?email=${email}&bmr=${Math.round(bmr / TEE)}&tee=${bmr}&bmi=${bmi}`)
+          axios(`my-fix-gym-app.herokuapp.com/caloriezones/email?email=${email}&bmr=${Math.round(bmr / TEE)}&tee=${bmr}&bmi=${bmi}`)
       } else {
           e.preventDefault()
       }
