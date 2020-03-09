@@ -1,0 +1,20 @@
+type Query {
+    emails(query: String): [Email!]!
+    email(query:String): Email!
+}
+
+type Mutation {
+    createEmail(data: CreateEmailInput!): Email!
+}
+
+input CreateEmailInput {
+    firstName: String!
+    lastName: String!
+    email: String!
+}
+
+type Email {
+    firstName: String!
+    lastName: String!
+    email: String
+}

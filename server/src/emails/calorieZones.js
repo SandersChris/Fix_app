@@ -2,7 +2,7 @@ const sgMail = require('@sendgrid/mail')
 
 sgMail.setApiKey(process.env.SENDGRID_KEY)
 
-const sendCalorieZoneInfo = (email, bmr, tee, bmi) => {
+const sendCalorieZoneInfo = (email, bmr=0, tee=0, bmi=0) => {
     sgMail.send({
         to: 'sandersfl21@gmail.com',
         from: 'christopherdksanders@gmail.com',
